@@ -103,7 +103,7 @@ class Game:
             self.change_lives(1)
             self.coins = 0
 
-    def create_menu(self):0
+    def create_menu(self):
         """
         Creates a new MainMenu instance, transitioning the game status to the main menu.
         """
