@@ -24,9 +24,9 @@ class MainMenu:
         self.create_overworld = create_overworld
 
         # Main Menu Background
-        self.background_frames = import_folder("../Menu/background_frames")
+        self.background_frames = import_folder("Menu/background_frames")
         self.bg_index = 0
-        self.monitor_frames = import_folder("../Menu/monitor_frames")
+        self.monitor_frames = import_folder("Menu/monitor_frames")
 
     def draw_background(self):
         """
@@ -52,7 +52,7 @@ class MainMenu:
         - The menu text prompts the player to "press space" to start the game.
         """
         self.menu_text_surface = pygame.surface.Surface((500, 70), pygame.SRCALPHA)
-        self.menu_font = pygame.font.Font("../Packages/Fonts/Super-Mario-Bros.ttf", 40)
+        self.menu_font = pygame.font.Font("Packages/Fonts/Super-Mario-Bros.ttf", 40)
 
         self.menu_text = self.menu_font.render(f"press space", True, "White")
         self.menu_text_surface.blit(self.menu_text, (70, 10))
@@ -66,7 +66,7 @@ class MainMenu:
         Draws the title image on the main menu.
         - The title image is loaded and displayed at the top center of the main menu.
         """
-        self.title = pygame.image.load("../Menu/menu_title.png")
+        self.title = pygame.image.load("Menu/menu_title.png")
         self.display_surface.blit(self.title, (screen_width / 2 - 200, 80))
 
     def get_input(self):

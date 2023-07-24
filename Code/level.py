@@ -32,6 +32,7 @@ class Level(Player):
             ...tile_list: the return value of the import_cut_graphics, that cuts the spritesheet images to 64x64 tile textures, returns them in a list
 
         - Player
+            change_form: A method to track the form of the player between levels
             player: the sprite of the player
             alive: tracks if player is alive or not
             invincible: tracks i-frames
@@ -68,7 +69,14 @@ class Level(Player):
     """
 
     def __init__(
-        self, current_level, surface, create_overworld, change_lives, change_coins
+        self,
+        current_level,
+        surface,
+        create_overworld,
+        change_lives,
+        change_coins,
+        change_form,
+        player_form,
     ):
 
         # overworld
@@ -82,13 +90,13 @@ class Level(Player):
         self.world_shift = 0
 
         self.base_tile_list = import_cut_graphics(
-            "../Packages/Textures/map/blocks/static/super_mario_bros__tile_revamp_by_malice936_d5ik1aw_scaled_4x_pngcrushed (1).png",
+            "Packages/Textures/map/blocks/static/super_mario_bros__tile_revamp_by_malice936_d5ik1aw_scaled_4x_pngcrushed (1).png",
             "terrain",
         )
 
         # goal
         self.goal_tile_list = import_cut_graphics(
-            "../Packages/Textures/map/blocks/static/castle.png",
+            "Packages/Textures/map/blocks/static/castle.png",
             "goal",
         )
         goal_layout = import_csv_layout(level_data["goal"])
@@ -101,12 +109,20 @@ class Level(Player):
         self.animated_sprites = self.create_tile_group(animated_layout, "animated")
 
         # player
+        self.change_form = change_form
         player_layout = import_csv_layout(level_data["player"])
         self.player = pygame.sprite.GroupSingle()
         self.create_tile_group(player_layout, "player")
+        self.player_form = player_form
         self.alive = True
         self.invincible = False
         self.damage_time = 0
+        # The player's form is defaulted, to what it finished the last level with
+        if self.player_form == "big":
+            PlayerMovements.grow(self.player.sprite)
+        elif self.player_form == "fire":
+            PlayerMovements.grow(self.player.sprite)
+            PlayerMovements.fire_power_up(self.player.sprite)
 
         # boss
         self.boss = pygame.sprite.GroupSingle()
@@ -125,7 +141,7 @@ class Level(Player):
 
         # base
         self.base_tile_list = import_cut_graphics(
-            "../Packages/Textures/map/blocks/static/super_mario_bros__tile_revamp_by_malice936_d5ik1aw_scaled_4x_pngcrushed (1).png",
+            "Packages/Textures/map/blocks/static/super_mario_bros__tile_revamp_by_malice936_d5ik1aw_scaled_4x_pngcrushed (1).png",
             "terrain",
         )
         base_layout = import_csv_layout(level_data["base"])
@@ -198,7 +214,7 @@ class Level(Player):
                                 x - (enemy["width"] - tile_size),
                                 y - (enemy["height"] - tile_size),
                                 enemy["start_frame_index"],
-                                "../Packages/Textures/map/enemies/enemies.png",
+                                "Packages/Textures/map/enemies/enemies.png",
                                 "enemy",
                                 enemy["frame_count"] - 1,
                             )
@@ -213,7 +229,7 @@ class Level(Player):
                             x,
                             y,
                             int(val) * 4,
-                            "../Packages/Textures/map/blocks/animated/question-block.png",
+                            "Packages/Textures/map/blocks/animated/question-block.png",
                             block_type,
                             4,
                         )
@@ -235,7 +251,7 @@ class Level(Player):
                     elif type == "background":
                         if val == "1":
                             sprite = Background(
-                                "../Packages/Textures/map/decor/bush.png",
+                                "Packages/Textures/map/decor/bush.png",
                                 (tile_size, tile_size),
                                 x,
                                 y,
@@ -243,7 +259,7 @@ class Level(Player):
                             sprite_group.add(sprite)
                         elif val == "0":
                             sprite = Background(
-                                "../Packages/Textures/map/decor/cloud.png",
+                                "Packages/Textures/map/decor/cloud.png",
                                 (tile_size, tile_size),
                                 x,
                                 y,
@@ -649,6 +665,7 @@ class Level(Player):
             None
         """
         if self.player.sprite.rect.top > screen_height or died:
+            self.player_form = "small"
             self.create_overworld(self.current_level, 0, player_size)
             self.change_lives(-1)
 
@@ -665,7 +682,10 @@ class Level(Player):
         Returns:
             None
         """
+
         if pygame.sprite.spritecollide(self.player.sprite, self.goal_sprites, False):
+            player_form = Player.get_status(self.player.sprite)[2]
+            self.change_form(player_form)
             self.create_overworld(self.current_level, self.new_max_level, player_size)
 
     def run(self):

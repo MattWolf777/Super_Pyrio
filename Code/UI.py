@@ -29,10 +29,10 @@ class UI:
 
         self.life_panel_surface = pygame.surface.Surface((150, 70), pygame.SRCALPHA)
         self.life_panel_font = pygame.font.Font(
-            "../Packages/Fonts/Super-Mario-Bros.ttf", 40
+            "Packages/Fonts/Super-Mario-Bros.ttf", 40
         )
 
-        self.head_icon = pygame.image.load("../Packages/UI/head_icon.png")
+        self.head_icon = pygame.image.load("Packages/UI/head_icon.png")
         self.head_icon.set_colorkey((0, 0, 0))
         self.life_panel_surface.blit(self.head_icon, (0, 0))
 
@@ -51,10 +51,10 @@ class UI:
 
         self.coin_panel_surface = pygame.surface.Surface((200, 70), pygame.SRCALPHA)
         self.coin_panel_font = pygame.font.Font(
-            "../Packages/Fonts/Super-Mario-Bros.ttf", 40
+            "Packages/Fonts/Super-Mario-Bros.ttf", 40
         )
 
-        self.coin_icon = pygame.image.load("../Packages/Textures/map/objects/coin.png")
+        self.coin_icon = pygame.image.load("Packages/Textures/map/objects/coin.png")
         self.coin_icon.set_colorkey((0, 0, 0))
         self.coin_panel_surface.blit(self.coin_icon, (0, 0))
 

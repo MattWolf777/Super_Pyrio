@@ -50,7 +50,7 @@ class Coins(Object):
     def __init__(self, pos):
         super().__init__(pos)
         self.duration = 4
-        self.image = pygame.image.load("../Packages/Textures/map/objects/coin.png")
+        self.image = pygame.image.load("Packages/Textures/map/objects/coin.png")
         self.image.set_colorkey((0, 0, 0))
         self.rect = self.image.get_rect()
         self.rect.centerx, self.rect.centery = pos
@@ -76,11 +76,11 @@ class PowerUp(Object):
         super().__init__(pos)
         if player_size == "small":
             self.image = pygame.image.load(
-                "../Packages/Textures/map/objects/mushroom.png"
+                "Packages/Textures/map/objects/mushroom.png"
             )
         else:
             self.image = pygame.image.load(
-                "../Packages/Textures/map/objects/fire-flower.png"
+                "Packages/Textures/map/objects/fire-flower.png"
             )
 
         self.duration = 60

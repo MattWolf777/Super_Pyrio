@@ -27,6 +27,7 @@ class Game:
         self.max_level = 4
         self.current_lives = 5
         self.coins = 0
+        self.form = "small"
 
         # MENU
         self.menu = MainMenu(screen, self.create_overworld)
@@ -39,6 +40,13 @@ class Game:
 
         # UI
         self.ui = UI(screen)
+
+    def change_form(self, form):
+        """
+        Changes the player's form stored in main
+        - this is important to track player state in between levels
+        """
+        self.form = form
 
     def create_level(self, current_level):
         """
@@ -54,6 +62,8 @@ class Game:
             self.create_overworld,
             self.change_lives,
             self.change_coins,
+            self.change_form,
+            self.form,
         )
         self.status = "level"
 
@@ -132,8 +142,8 @@ class Game:
 # Initialize the Pygame library.
 pygame.init()
 
-# Import a list of background images from the "../OverWorld/OverworldMap" folder.
-bg_list = import_folder("../OverWorld/OverworldMap")
+# Import a list of background images from the "OverWorld/OverworldMap" folder.
+bg_list = import_folder("OverWorld/OverworldMap")
 
 # Initialize the index for the current background image to be displayed.
 bg_index = 0

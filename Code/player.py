@@ -94,15 +94,15 @@ class Player(pygame.sprite.Sprite):
 
     def import_character_asstes(
         self,
-        character_dir="../Packages/Textures/player/mario/",
-        particles_dir="../Packages/Textures/particles/",
+        character_dir="Packages/Textures/player/mario/",
+        particles_dir="Packages/Textures/particles/",
     ):
         """
         Import character assets and attack particles from the specified directories.
 
         Parameters:
-            character_dir (str): The directory path for character assets (default is "../Packages/Textures/player/mario/").
-            particles_dir (str): The directory path for attack particles (default is "../Packages/Textures/particles/").
+            character_dir (str): The directory path for character assets (default is "Packages/Textures/player/mario/").
+            particles_dir (str): The directory path for attack particles (default is "Packages/Textures/particles/").
         """
         # Import character assets
         self.forms = import_states(character_dir)
