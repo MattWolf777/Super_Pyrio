@@ -14,7 +14,7 @@
 - Copy code
 - pip install pygame
 - Clone the repository: Clone this repository to your local machine using Git or download the ZIP file and extract it.
-- Run the game: Navigate to the project directory and run the following command:
+- Run the game: Navigate to the project directory and run the "main.py"file:
 
 
 ### How to Play
