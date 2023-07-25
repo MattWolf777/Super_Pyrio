@@ -666,6 +666,7 @@ class Level(Player):
         """
         if self.player.sprite.rect.top > screen_height or died:
             self.player_form = "small"
+            self.change_form(self.player_form)
             self.create_overworld(self.current_level, 0, player_size)
             self.change_lives(-1)
 
