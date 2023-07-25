@@ -94,13 +94,13 @@ class Boss(pygame.sprite.Sprite):
 
         # Particles
         self.fire_ball = pygame.image.load(
-            "Packages/Textures/map/enemies/boss/mecha_boss_fire.png"
+            "../Packages/Textures/map/enemies/boss/mecha_boss_fire.png"
         )
         self.fire_ball.set_colorkey((0, 0, 0))
         self.fire_ball_speed = 8
         self.particle_pos = [0, 0]
         self.pow_effect = pygame.image.load(
-            "Packages/Textures/map/enemies/boss/pow.jpg"
+            "../Packages/Textures/map/enemies/boss/pow.jpg"
         )
         self.pow_effect.set_colorkey((0, 0, 0))
 
@@ -113,7 +113,7 @@ class Boss(pygame.sprite.Sprite):
         """
         Imports the boss's animation_frames for different forms and statuses.
         """
-        character_path = "Packages/Textures/map/enemies/boss/boss/"
+        character_path = "../Packages/Textures/map/enemies/boss/boss/"
         self.forms = import_states(character_path)
 
     def animate(self):

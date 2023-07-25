@@ -50,7 +50,7 @@ class Icon(pygame.sprite.Sprite):
         super().__init__()
         self.pos = pos
         self.image = pygame.image.load(
-            "Packages/Textures/player/mario/small/idle/mario.png"
+            "../Packages/Textures/player/mario/small/idle/mario.png"
         )
         self.image.set_colorkey((0, 0, 0))
         self.rect = self.image.get_rect(center=pos)
@@ -108,7 +108,7 @@ class Overworld:
         self.setup_icon()
 
         # background
-        self.bg_list = import_folder("OverWorld/OverworldMap")
+        self.bg_list = import_folder("../OverWorld/OverworldMap")
         self.bg_index = 0
         self.screen_width = screen_width
         self.screen_height = screen_height

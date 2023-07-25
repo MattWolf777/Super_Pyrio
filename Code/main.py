@@ -143,7 +143,7 @@ class Game:
 pygame.init()
 
 # Import a list of background images from the "OverWorld/OverworldMap" folder.
-bg_list = import_folder("OverWorld/OverworldMap")
+bg_list = import_folder("../OverWorld/OverworldMap")
 
 # Initialize the index for the current background image to be displayed.
 bg_index = 0

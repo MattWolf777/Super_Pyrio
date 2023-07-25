@@ -90,13 +90,13 @@ class Level(Player):
         self.world_shift = 0
 
         self.base_tile_list = import_cut_graphics(
-            "Packages/Textures/map/blocks/static/super_mario_bros__tile_revamp_by_malice936_d5ik1aw_scaled_4x_pngcrushed (1).png",
+            "../Packages/Textures/map/blocks/static/super_mario_bros__tile_revamp_by_malice936_d5ik1aw_scaled_4x_pngcrushed (1).png",
             "terrain",
         )
 
         # goal
         self.goal_tile_list = import_cut_graphics(
-            "Packages/Textures/map/blocks/static/castle.png",
+            "../Packages/Textures/map/blocks/static/castle.png",
             "goal",
         )
         goal_layout = import_csv_layout(level_data["goal"])
@@ -141,7 +141,7 @@ class Level(Player):
 
         # base
         self.base_tile_list = import_cut_graphics(
-            "Packages/Textures/map/blocks/static/super_mario_bros__tile_revamp_by_malice936_d5ik1aw_scaled_4x_pngcrushed (1).png",
+            "../Packages/Textures/map/blocks/static/super_mario_bros__tile_revamp_by_malice936_d5ik1aw_scaled_4x_pngcrushed (1).png",
             "terrain",
         )
         base_layout = import_csv_layout(level_data["base"])
@@ -214,7 +214,7 @@ class Level(Player):
                                 x - (enemy["width"] - tile_size),
                                 y - (enemy["height"] - tile_size),
                                 enemy["start_frame_index"],
-                                "Packages/Textures/map/enemies/enemies.png",
+                                "../Packages/Textures/map/enemies/enemies.png",
                                 "enemy",
                                 enemy["frame_count"] - 1,
                             )
@@ -229,7 +229,7 @@ class Level(Player):
                             x,
                             y,
                             int(val) * 4,
-                            "Packages/Textures/map/blocks/animated/question-block.png",
+                            "../Packages/Textures/map/blocks/animated/question-block.png",
                             block_type,
                             4,
                         )
@@ -251,7 +251,7 @@ class Level(Player):
                     elif type == "background":
                         if val == "1":
                             sprite = Background(
-                                "Packages/Textures/map/decor/bush.png",
+                                "../Packages/Textures/map/decor/bush.png",
                                 (tile_size, tile_size),
                                 x,
                                 y,
@@ -259,7 +259,7 @@ class Level(Player):
                             sprite_group.add(sprite)
                         elif val == "0":
                             sprite = Background(
-                                "Packages/Textures/map/decor/cloud.png",
+                                "../Packages/Textures/map/decor/cloud.png",
                                 (tile_size, tile_size),
                                 x,
                                 y,

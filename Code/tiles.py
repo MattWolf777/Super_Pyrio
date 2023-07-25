@@ -144,7 +144,7 @@ class AnimatedTile(Tile):
             self.coin_count -= 1
         if self.coin_count == 0:
             self.image = pygame.image.load(
-                "Packages/Textures/map/blocks/static/empty_question_block.png"
+                "../Packages/Textures/map/blocks/static/empty_question_block.png"
             )
             self.image.set_colorkey((0, 0, 0))
 
