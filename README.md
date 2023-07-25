@@ -1,5 +1,6 @@
 # Mario-Like Platformer Game in Pygame
 
+![gameplay_gif](https://github.com/MattWolf777/Super_Pyrio/assets/109434781/b6b0115e-5286-441c-802d-2f4ff174a2c9)
 
 ### Description
 - This is a platformer game created in Pygame that closely resembles the classic Mario games. 
@@ -43,3 +44,8 @@
 
 ### Contact Information
 If you have any questions or feedback, feel free to contact me at farkas.mate.zsolt777@gmail.com
+
+![Capture_1](https://github.com/MattWolf777/Super_Pyrio/assets/109434781/2c4d20fb-78f4-43ef-940b-89440ce48bc4)
+<h1 align="center" >
+Thank you for your time!
+<h1>
