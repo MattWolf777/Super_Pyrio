@@ -113,6 +113,7 @@ class Overworld:
         self.screen_width = screen_width
         self.screen_height = screen_height
         self.create_menu = create_menu
+        self.controls = pygame.image.load("../OverWorld/overworld_controls.png")
 
     def setup_nodes(self):
         """
@@ -160,6 +161,7 @@ class Overworld:
                 (screen_height - self.screen_height) / 2,
             ),
         )
+        self.display_surface.blit(self.controls, (50, 800))
 
     def setup_icon(self):
         """

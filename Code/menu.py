@@ -27,6 +27,7 @@ class MainMenu:
         self.background_frames = import_folder("../Menu/background_frames")
         self.bg_index = 0
         self.monitor_frames = import_folder("../Menu/monitor_frames")
+        self.controls = pygame.image.load("../Menu/controls.png")
 
     def draw_background(self):
         """
@@ -51,14 +52,25 @@ class MainMenu:
         Draws the menu text on the main menu.
         - The menu text prompts the player to "press space" to start the game.
         """
-        self.menu_text_surface = pygame.surface.Surface((500, 70), pygame.SRCALPHA)
+        self.menu_text_surface = pygame.surface.Surface((820, 200), pygame.SRCALPHA)
         self.menu_font = pygame.font.Font("../Packages/Fonts/Super-Mario-Bros.ttf", 40)
 
-        self.menu_text = self.menu_font.render(f"press space", True, "White")
-        self.menu_text_surface.blit(self.menu_text, (70, 10))
+        self.menu_text = self.menu_font.render(
+            "press space to start",
+            True,
+            "White",
+        )
+        self.control_text = self.menu_font.render(
+            "hold f to show controls",
+            True,
+            "White",
+        )
+
+        self.menu_text_surface.blit(self.menu_text, (60, 10))
+        self.menu_text_surface.blit(self.control_text, (20, 60))
 
         self.display_surface.blit(
-            self.menu_text_surface, (screen_width / 2 - 250, screen_height - 80)
+            self.menu_text_surface, (screen_width / 2 - 400, screen_height - 130)
         )
 
     def draw_menu_title(self):
@@ -78,12 +90,16 @@ class MainMenu:
         if keys[pygame.K_SPACE]:
             self.create_overworld(0, 0, "small")
 
+        if keys[pygame.K_f]:
+            self.display_surface.blit(self.controls, (290, 200))
+
     def run(self):
         """
         Main loop for running the main menu.
         - This method is responsible for handling input, rendering the menu, and starting the game.
         """
-        self.get_input()
+
         self.draw_background()
         self.draw_menu_text()
         self.draw_menu_title()
+        self.get_input()

@@ -3,24 +3,24 @@
  <editorsettings>
   <export target="Level_1.csv" format="csv"/>
  </editorsettings>
- <tileset firstgid="1" source="../level_data/castle.tsx"/>
- <tileset firstgid="113" source="../level_data/player-end.tsx"/>
- <tileset firstgid="113" source="../level_data/static__solid.tsx"/>
- <tileset firstgid="193" source="../level_data/enemy_tiles.tsx"/>
- <tileset firstgid="197" source="../level_data/CASTLEA.tsx"/>
- <tileset firstgid="309" source="../level_data/player.tsx"/>
- <tileset firstgid="311" source="../level_data/constrain.tsx"/>
+ <tileset firstgid="1" source="./level_data/castle.tsx"/>
+ <tileset firstgid="113" source="./level_data/player-end.tsx"/>
+ <tileset firstgid="113" source="./level_data/static__solid.tsx"/>
+ <tileset firstgid="193" source="./level_data/enemy_tiles.tsx"/>
+ <tileset firstgid="197" source="./level_data/CASTLEA.tsx"/>
+ <tileset firstgid="309" source="./level_data/player.tsx"/>
+ <tileset firstgid="311" source="./level_data/constrain.tsx"/>
  <tileset firstgid="312" source="bush.tsx"/>
  <tileset firstgid="313" name="cloud" tilewidth="282" tileheight="128" tilecount="2" columns="0">
   <grid orientation="orthogonal" width="1" height="1"/>
   <tile id="0">
-   <image width="176" height="128" source="../../Packages/Textures/map/decor/cloud.png"/>
+   <image width="176" height="128" source="././Packages/Textures/map/decor/cloud.png"/>
   </tile>
   <tile id="1">
-   <image width="282" height="128" source="../../Packages/Textures/map/decor/bush.png"/>
+   <image width="282" height="128" source="././Packages/Textures/map/decor/bush.png"/>
   </tile>
  </tileset>
- <tileset firstgid="315" source="../level_data/question_blocks.tsx"/>
+ <tileset firstgid="315" source="./level_data/question_blocks.tsx"/>
  <tileset firstgid="339" source="question-block.tsx"/>
  <layer id="3" name="base" width="220" height="14">
   <data encoding="csv">

@@ -24,7 +24,7 @@ class Game:
 
     def __init__(self):
         # ATTRIBUTES
-        self.max_level = 4
+        self.max_level = 1
         self.current_lives = 5
         self.coins = 0
         self.form = "small"

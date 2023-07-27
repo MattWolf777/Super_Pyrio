@@ -34,7 +34,7 @@ class Game:
 pygame.init()
 screen = pygame.display.set_mode((screen_width, screen_height))
 clock = pygame.time.Clock()
-bg_list = import_folder("../OverworldMap")
+bg_list = import_folder("./OverworldMap")
 bg_index = 0
 bg_width = bg_list[bg_index].get_width()
 bg_height = bg_list[bg_index].get_height()
