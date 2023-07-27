@@ -70,7 +70,7 @@ class Player(pygame.sprite.Sprite):
         self.position = pygame.math.Vector2(pos[0], pos[1])
         self.speed = 5
         self.gravity = 0.6
-        self.jump_speed = -18
+        self.jump_speed = -20
 
         # Player Status
         self.status = "idle"
@@ -337,7 +337,6 @@ class PlayerMovements(Player):
                 self.rect.height + 55,
             )
             self.form = "big"
-            self.jump_speed = -20
 
     def fire_power_up(self):
         # Grants the player the fire power-up.
@@ -357,7 +356,7 @@ class PlayerMovements(Player):
                 self.rect.height - 55,
             )
             self.form = "small"
-            self.jump_speed = -18
+            self.jump_speed = -20
 
     def attack(self, combo):
         # Performs an attack if the player is in 'fire' form.
