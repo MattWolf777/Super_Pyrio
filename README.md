@@ -1,4 +1,4 @@
-# Mario-Like Platformer Game in Pygame
+# Mario-Like Platformer Game in Python
 
 ![gameplay_gif](https://github.com/MattWolf777/Super_Pyrio/assets/109434781/b6b0115e-5286-441c-802d-2f4ff174a2c9)
 
