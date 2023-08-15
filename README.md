@@ -5,6 +5,7 @@
 ### Description
 - This is a platformer game created in Pygame that closely resembles the classic Mario games. 
 - The game features a side-scrolling environment with various levels, obstacles, enemies, power-ups, and a boss battle.
+- This project includes ideas and features from the Clear Code's pygame platformer tutorial: https://www.youtube.com/watch?v=KJpP85tnOKg&list=PL8ui5HK3oSiGXM2Pc2DahNu1xXBf7WQh-
 
 
 ### Installation
@@ -41,6 +42,9 @@
 - Sound effects and music are not implemented.
 - The boss battle may need balancing for difficulty.
 
+### Shout-out
+- To Clear Code youtube chanel for the insight and ideas implemented in my project. https://www.youtube.com/@ClearCode
+- To SuliPy for getting me started, and the vast amount of information they share for free.
 
 ### Contact Information
 If you have any questions or feedback, feel free to contact me at farkas.mate.zsolt777@gmail.com
